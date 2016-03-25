@@ -1,0 +1,42 @@
+{
+  "name": "nearby-cities",
+  "version": "1.0.0",
+  "description": "Give me your coordinates and I'll tell you where the nearest cities are. Works offline.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard-format -w && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeke/nearby-placenames.git"
+  },
+  "keywords": [
+    "geolocation",
+    "latitude",
+    "longitude",
+    "placename",
+    "placenames",
+    "geo",
+    "gis",
+    "location",
+    "city",
+    "state",
+    "country",
+    "zip",
+    "county"
+  ],
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/nearby-placenames/issues"
+  },
+  "homepage": "https://github.com/zeke/nearby-placenames#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "standard-format": "^2.1.1"
+  },
+  "dependencies": {
+    "all-the-cities": "^1.0.0",
+    "turf": "^2.0.2"
+  }
+}
