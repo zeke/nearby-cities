@@ -12,28 +12,22 @@ describe('nearby-cities', function () {
   it('accepts an object containing latitude and longitude', function () {
     const query = {latitude: 34.4362755, longitude: -119.705086}
     const cities = nearbyCities(query)
-
-    assert.equal(cities[0].name, 'Mission Canyon')
-    assert.equal(cities[1].name, 'Santa Barbara')
-    assert.equal(cities[2].name, 'Montecito')
-    assert.equal(cities[3].name, 'Summerland')
-    assert.equal(cities[4].name, 'Goleta')
+    ;[ 'Santa Barbara',
+      'Goleta',
+      'Isla Vista',
+      'Ventura'
+    ].forEach((item, index) => assert.equal(cities[index].name, item))
   })
 
-  it('accepts a browser-style Geoposition object', function () {
-    const query = {
-      coords: {
-        latitude: 34.4362755,
-        longitude: -119.705086
-      },
-      timestamp: 1458878612120
-    }
-    const cities = nearbyCities(query)
+  it('respects max_results', function () {
+    const query = {latitude: 34.4362755, longitude: -119.705086}
+    const cities = nearbyCities(query, 5)
+    assert.equal(cities.length, 5)
+  })
 
-    assert.equal(cities[0].name, 'Mission Canyon')
-    assert.equal(cities[1].name, 'Santa Barbara')
-    assert.equal(cities[2].name, 'Montecito')
-    assert.equal(cities[3].name, 'Summerland')
-    assert.equal(cities[4].name, 'Goleta')
+  it('respects max distance', function () {
+    const query = {latitude: 34.4362755, longitude: -119.705086}
+    const cities = nearbyCities(query, 10, 20000)
+    assert.equal(cities.length, 3)
   })
 })

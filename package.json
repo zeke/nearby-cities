@@ -1,14 +1,15 @@
 {
-  "name": "nearby-cities",
+  "name": "nearby-big-cities",
   "version": "1.0.0",
-  "description": "Give me your coordinates and I'll tell you where the nearest cities are. Works offline.",
+  "description": "Give me your coordinates and I'll tell you where the nearest cities (and their country)\nof at least 15000 people are. Uses k-nearest-neighbour algorithm, so it's fast. Works offline.\nDirectly based on git+https://github.com/zeke/nearby-cities.git",
   "main": "index.js",
   "scripts": {
-    "test": "standard-format -w && mocha"
+    "test": "standard && mocha",
+    "build": "node build.js > cities.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeke/nearby-placenames.git"
+    "url": "git+https://github.com/river-jade/nearby-big-cities.git"
   },
   "keywords": [
     "geolocation",
@@ -25,18 +26,19 @@
     "zip",
     "county"
   ],
-  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "author": "River Satya <river.satya@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zeke/nearby-placenames/issues"
+    "url": "https://github.com/river-jade/nearby-big-cities/issues"
   },
-  "homepage": "https://github.com/zeke/nearby-placenames#readme",
+  "homepage": "https://github.com/river-jade/nearby-big-cities#readme",
   "devDependencies": {
     "mocha": "^2.4.5",
-    "standard-format": "^2.1.1"
+    "split2": "^2.1.1",
+    "standard": "^9.0.1",
+    "through2": "^2.0.3"
   },
   "dependencies": {
-    "all-the-cities": "^1.0.0",
-    "turf": "^2.0.2"
+    "sphere-knn": "^1.3.1"
   }
 }
