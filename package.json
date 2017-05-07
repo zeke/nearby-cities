@@ -32,11 +32,12 @@
   },
   "homepage": "https://github.com/zeke/nearby-placenames#readme",
   "devDependencies": {
-    "mocha": "^2.4.5",
+    "mocha": "^3.2.0",
     "standard-format": "^2.1.1"
   },
   "dependencies": {
-    "all-the-cities": "^1.0.0",
-    "turf": "^2.0.2"
+    "all-the-cities": "^2.0.0",
+    "geokdbush": "^1.0.2",
+    "kdbush": "^1.0.1"
   }
 }

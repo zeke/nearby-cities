@@ -5,13 +5,9 @@ const assert = require('assert')
 const nearbyCities = require('..')
 
 describe('nearby-cities', function () {
-  it('is a function', function () {
-    assert.equal(typeof nearbyCities, 'function')
-  })
-
   it('accepts an object containing latitude and longitude', function () {
     const query = {latitude: 34.4362755, longitude: -119.705086}
-    const cities = nearbyCities(query)
+    const cities = nearbyCities(query, 5)
 
     assert.equal(cities[0].name, 'Mission Canyon')
     assert.equal(cities[1].name, 'Santa Barbara')
@@ -28,7 +24,7 @@ describe('nearby-cities', function () {
       },
       timestamp: 1458878612120
     }
-    const cities = nearbyCities(query)
+    const cities = nearbyCities(query, 5)
 
     assert.equal(cities[0].name, 'Mission Canyon')
     assert.equal(cities[1].name, 'Santa Barbara')

@@ -1,4 +1,4 @@
-# nearby-cities 
+# nearby-cities
 
 Give me your coordinates and I&#39;ll tell you where the nearest cities are. Works offline.
 
@@ -29,27 +29,12 @@ console.log(cities[0])
 {
   name: "Mission Canyon",
   country: "US",
-  altCountry: "",
-  muni: "",
-  muniSub: "",
   featureClass: "P",
   featureCode: "PPL",
   adminCode: "CA",
   population: 2381,
   lat: 34.45083,
-  lon: -119.71291,
-  point: {
-    type: "Feature",
-    geometry: {
-      type: "Point",
-      coordinates: [
-        -119.71291,
-        34.45083
-      ]
-    },
-    properties: {}
-  },
-  distance: 1.7708473508170872
+  lon: -119.71291
 }
 */
 
@@ -65,13 +50,13 @@ npm test
 ## Dependencies
 
 - [all-the-cities](https://github.com/zeke/all-the-cities): All the 138,398 cities of the world with a population of at least 1000 inhabitants, in a big JSON array
-- [turf](https://github.com/turfjs/turf): a node.js library for performing geospatial operations with geojson
+- [kdbush](https://github.com/mourner/kdbush): a spatial index for 2D points
+- [geokdbush](https://github.com/mourner/geokdbush): a geographic extension for kdbush
 
 ## Dev Dependencies
 
 - [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
 - [standard-format](https://github.com/maxogden/standard-format): attempts to reformat javascript to comply with feross/standard style
-
 
 ## License
 

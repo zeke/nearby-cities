@@ -1,28 +1,15 @@
 const assert = require('assert')
-const turf = require('turf')
 const cities = require('all-the-cities')
-  .filter(city => {
-    return !!city.lat && !!city.lon
-  })
+const kdbush = require('kdbush')
+const geokdbush = require('geokdbush')
 
-module.exports = function (input) {
-  assert(input, 'function requires an object with `latitude` and `longitude` properties')
+const index = kdbush(cities, (p) => p.lon, (p) => p.lat)
 
-  if (input && input.coords) {
-    input.latitude = input.coords.latitude
-    input.longitude = input.coords.longitude
-  }
+module.exports = function (input, maxResults, maxDistance) {
+  const lon = input.coords ? +input.coords.longitude : +input.longitude
+  const lat = input.coords ? +input.coords.latitude : +input.latitude
 
-  var center = turf.point([input.longitude, input.latitude])
+  assert(!isNaN(lon) && !isNaN(lat), 'function requires an object with `latitude` and `longitude` properties')
 
-  return cities
-    .map(city => {
-      city.point = turf.point([city.lon, city.lat])
-      return city
-    })
-    .sort((a, b) => {
-      b.distance = turf.distance(b.point, center)
-      a.distance = turf.distance(a.point, center)
-      return a.distance - b.distance
-    })
+  return geokdbush.around(index, lon, lat, maxResults, maxDistance)
 }
