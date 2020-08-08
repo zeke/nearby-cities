@@ -6,7 +6,7 @@ const nearbyCities = require("nearby-cities")
 
 exports.handler = async function (event, context) {
   const query = {latitude: 34.4362755, longitude: -119.705086}
-  const cities = nearbyCities(query)
+  const cities = nearbyCities(query).slice(0, 20)
 
   return {
     statusCode: 200,
