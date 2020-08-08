@@ -4,7 +4,7 @@
   "description": "Give me your coordinates and I'll tell you where the nearest cities are. Works offline.",
   "main": "index.js",
   "scripts": {
-    "build": "echo hellooooo",
+    "build": "npm install --prefix=functions/search",
     "test": "standard-format -w && mocha"
   },
   "repository": "https://github.com/zeke/nearby-cities",
