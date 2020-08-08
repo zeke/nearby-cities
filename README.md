@@ -1,6 +1,12 @@
 # nearby-cities
 
-Give me your coordinates and I&#39;ll tell you where the nearest cities are. Works offline.
+Give me your coordinates and I'll tell you where the nearest cities are. Works offline.
+
+## Online usage
+
+This module is also available as a hosted HTTP webservice, powered by Netlify serverless functions.
+
+Example query: https://nearby-cities.netlify.app/.netlify/functions/search?latitude=37.871593&longitude=-122.272743
 
 ## Installation
 
