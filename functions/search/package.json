@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "nearby-cities": "^1.1.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^2.59.0"
+  }
+}
