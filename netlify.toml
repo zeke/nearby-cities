@@ -1,0 +1,6 @@
+[build]
+  publish = ""
+
+  # Directory with the serverless Lambda functions to deploy to AWS.
+  functions = "functions/"
+  functionsSource = "functions/"
