@@ -6,7 +6,7 @@ const nearbyCities = require('..')
 
 describe('nearby-cities', function () {
   it('accepts an object containing latitude and longitude', function () {
-    const query = {latitude: 34.4362755, longitude: -119.705086}
+    const query = { latitude: 34.4362755, longitude: -119.705086 }
     const cities = nearbyCities(query, 5)
 
     assert.equal(cities[0].name, 'Mission Canyon')

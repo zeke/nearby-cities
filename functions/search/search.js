@@ -1,8 +1,8 @@
 // This is a Netlify serverless function
-// 
+//
 // https://docs.netlify.com/functions/build-with-javascript
 
-const nearbyCities = require("nearby-cities")
+const nearbyCities = require('nearby-cities')
 const maxResults = 100
 const headers = {
   'Access-Control-Allow-Origin': '*'
@@ -13,12 +13,12 @@ exports.handler = async function (event, context) {
     return {
       statusCode: 400,
       headers,
-      body: JSON.stringify({error: 'latitude and longitude query params are required'})
+      body: JSON.stringify({ error: 'latitude and longitude query params are required' })
     }
   }
 
   const { latitude, longitude } = event.queryStringParameters
-  const cities = nearbyCities({latitude, longitude}).slice(0, maxResults)
+  const cities = nearbyCities({ latitude, longitude }).slice(0, maxResults)
 
   return {
     statusCode: 200,

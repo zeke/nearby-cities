@@ -1,5 +1,5 @@
 const nearbyCities = require('./')
-const query = {latitude: 34.4362755, longitude: -119.705086}
+const query = { latitude: 34.4362755, longitude: -119.705086 }
 const cities = nearbyCities(query)
 
 assert.equal(cities[0].name, 'Mission Canyon')
