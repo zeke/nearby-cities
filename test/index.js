@@ -9,11 +9,11 @@ describe('nearby-cities', function () {
     const query = { latitude: 34.4362755, longitude: -119.705086 }
     const cities = nearbyCities(query, 5)
 
-    assert.equal(cities[0].name, 'Mission Canyon')
-    assert.equal(cities[1].name, 'Santa Barbara')
-    assert.equal(cities[2].name, 'Montecito')
-    assert.equal(cities[3].name, 'Summerland')
-    assert.equal(cities[4].name, 'Goleta')
+    assert.strictEqual(cities[0].name, 'Mission Canyon')
+    assert.strictEqual(cities[1].name, 'Santa Barbara')
+    assert.strictEqual(cities[2].name, 'Montecito')
+    assert.strictEqual(cities[3].name, 'Summerland')
+    assert.strictEqual(cities[4].name, 'Goleta')
   })
 
   it('accepts a browser-style Geoposition object', function () {
@@ -26,10 +26,10 @@ describe('nearby-cities', function () {
     }
     const cities = nearbyCities(query, 5)
 
-    assert.equal(cities[0].name, 'Mission Canyon')
-    assert.equal(cities[1].name, 'Santa Barbara')
-    assert.equal(cities[2].name, 'Montecito')
-    assert.equal(cities[3].name, 'Summerland')
-    assert.equal(cities[4].name, 'Goleta')
+    assert.strictEqual(cities[0].name, 'Mission Canyon')
+    assert.strictEqual(cities[1].name, 'Santa Barbara')
+    assert.strictEqual(cities[2].name, 'Montecito')
+    assert.strictEqual(cities[3].name, 'Summerland')
+    assert.strictEqual(cities[4].name, 'Goleta')
   })
 })
